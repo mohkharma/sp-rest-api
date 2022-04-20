@@ -48,7 +48,7 @@ public class CustomerController {
     ///student?firstName=mohammad
     @GetMapping(value = "/studentRequestParam")
     public ResponseEntity<CustomerDto> getCustomerRequestParam(@RequestParam("firstName") String firstName,
-                                                            @RequestParam(name = "lastName") String lastName) {
+            @RequestParam(name = "lastName") String lastName) {
         return ResponseEntity.ok(new CustomerDto(firstName, lastName));
     }
 //    @GetMapping(value = "/studentx")

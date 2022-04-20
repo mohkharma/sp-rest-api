@@ -22,10 +22,10 @@ import java.util.List;
 public class CategoryResource {
     private final Logger log = LoggerFactory.getLogger(CategoryResource.class);
 
-//    @Autowired //@Autowired annotation is used for dependency injection.In spring boot application, all loaded beans are eligible for auto wiring to another bean. The annotation @Autowired in spring boot is used to auto-wire a bean into another bean.
+    //    @Autowired //@Autowired annotation is used for dependency injection.In spring boot application, all loaded beans are eligible for auto wiring to another bean. The annotation @Autowired in spring boot is used to auto-wire a bean into another bean.
     private CategoryService categoryService; //the use of interface rather than class is important for loose coupling
 
-// Constructor based  injection
+    // Constructor based  injection
     public CategoryResource(CategoryService categoryService) {
         this.categoryService = categoryService;
     }
@@ -36,7 +36,8 @@ public class CategoryResource {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CategoryDto> getCategoryById(@PathVariable(name = "id") long id) {
+    public ResponseEntity<CategoryDto> getCategoryById(
+            @PathVariable(name = "id") long id) {
         return ResponseEntity.ok(categoryService.getCategoryById(id));
     }
 
@@ -50,7 +51,8 @@ public class CategoryResource {
      * @return
      */
     @PostMapping
-    public ResponseEntity<CategoryDto> createCategory(@Valid @RequestBody CategoryDto categoryDto) {
+    public ResponseEntity<CategoryDto> createCategory
+    (@Valid @RequestBody CategoryDto categoryDto) {
         if (categoryDto.getId() != null) {
             log.error("Cannot have an ID {}", categoryDto);
             throw new BadRequestException(CategoryResource.class.getSimpleName(),
@@ -60,7 +62,8 @@ public class CategoryResource {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CategoryDto> updateCategory(@Valid @RequestBody CategoryDto categoryDto
+    public ResponseEntity<CategoryDto> updateCategory
+            (@Valid @RequestBody CategoryDto categoryDto
             , @PathVariable(name = "id") long id) {
         return new ResponseEntity<>(categoryService.updateCategory(categoryDto, id), HttpStatus.OK);
     }
