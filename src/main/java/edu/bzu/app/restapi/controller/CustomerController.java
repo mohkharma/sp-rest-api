@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+
 /**
  * Author: Mohammed Kharma
  */
@@ -48,7 +49,7 @@ public class CustomerController {
     ///student?firstName=mohammad
     @GetMapping(value = "/studentRequestParam")
     public ResponseEntity<CustomerDto> getCustomerRequestParam(@RequestParam("firstName") String firstName,
-            @RequestParam(name = "lastName") String lastName) {
+                                                               @RequestParam(name = "lastName") String lastName) {
         return ResponseEntity.ok(new CustomerDto(firstName, lastName));
     }
 //    @GetMapping(value = "/studentx")

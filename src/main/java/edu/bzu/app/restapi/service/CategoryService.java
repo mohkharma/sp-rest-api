@@ -11,12 +11,12 @@ import java.util.List;
  * and this contract is enforced at build time by the compiler.
  * In case you have multiple implementations you need to use qualifier annotation to specify kind of implementation you need to inject.
  * Or you can create object by yourself using class names
- *
+ * <p>
  * In general:
  * Summarizing:
- *
+ * <p>
  * When we talk about abstract classes we are defining characteristics of an object type; specifying what an object is.
- *
+ * <p>
  * When we talk about an interface and define capabilities that we promise to provide, we are talking about establishing a contract about what the object can do.
  * Author: Mohammed Kharma
  */

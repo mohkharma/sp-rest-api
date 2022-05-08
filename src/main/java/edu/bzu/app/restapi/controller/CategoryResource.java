@@ -1,11 +1,10 @@
 package edu.bzu.app.restapi.controller;
 
-import edu.bzu.app.restapi.exception.BadRequestException;
 import edu.bzu.app.restapi.dto.CategoryDto;
+import edu.bzu.app.restapi.exception.BadRequestException;
 import edu.bzu.app.restapi.service.CategoryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -64,7 +63,7 @@ public class CategoryResource {
     @PutMapping("/{id}")
     public ResponseEntity<CategoryDto> updateCategory
             (@Valid @RequestBody CategoryDto categoryDto
-            , @PathVariable(name = "id") long id) {
+                    , @PathVariable(name = "id") long id) {
         return new ResponseEntity<>(categoryService.updateCategory(categoryDto, id), HttpStatus.OK);
     }
 

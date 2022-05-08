@@ -1,8 +1,8 @@
 package edu.bzu.app.restapi.service.impl;
 
+import edu.bzu.app.restapi.dto.CategoryDto;
 import edu.bzu.app.restapi.entity.Category;
 import edu.bzu.app.restapi.exception.ResourceNotFoundException;
-import edu.bzu.app.restapi.dto.CategoryDto;
 import edu.bzu.app.restapi.repository.CategoryRepository;
 import edu.bzu.app.restapi.service.CategoryService;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *It is used to mark the class as a service provider.
+ * It is used to mark the class as a service provider.
  * So overall @Service annotation is used with classes that provide some business functionalities.
  * Spring context will autodetect these classes when annotation-based configuration and classpath scanning is used
  * Author: Mohammed Kharma
@@ -73,7 +73,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     // convert Entity into DTO
-    private CategoryDto mapToDTO(Category category){
+    private CategoryDto mapToDTO(Category category) {
         CategoryDto categoryDto = new CategoryDto();
         categoryDto.setId(category.getId());
         categoryDto.setName(category.getName());
@@ -85,7 +85,7 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     // convert DTO to entity
-    private Category mapToEntity(CategoryDto categoryDto){
+    private Category mapToEntity(CategoryDto categoryDto) {
         Category category = new Category();
         category.setName(categoryDto.getName());
         category.setDescription(categoryDto.getDescription());

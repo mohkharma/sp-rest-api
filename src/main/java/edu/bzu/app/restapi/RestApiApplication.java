@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.Random;
+
 /**
  * Author: Mohammed Kharma
  */
@@ -19,9 +20,9 @@ public class RestApiApplication {
         SpringApplication.run(RestApiApplication.class, args);
     }
 
-/**
- * CommandLineRunner run() will get execute, just after application context is created and before spring boot application starts up.
- * */
+    /**
+     * CommandLineRunner run() will get execute, just after application context is created and before spring boot application starts up.
+     */
     @Bean
     CommandLineRunner runner(CategoryService categoryService) {
         return args -> {
@@ -43,10 +44,11 @@ public class RestApiApplication {
     /**
      * a bean exploits the Inversion of Control feature by which an object defines its dependencies without creating them
      * Spring @Bean annotation tells that a method produces a bean to be managed by the Spring container.
+     *
+     * @return RestTemplate instance
      * @Bean is a method-level annotation and a direct analog of the XML <bean/> element.
      * The annotation supports most of the attributes offered by <bean/> ,
      * such as: init-method , destroy-method , autowiring , lazy-init , dependency-check , depends-on and scope .
-     * @return RestTemplate instance
      */
     @Bean("restTemplate")
     public RestTemplate getRestTemplate() {

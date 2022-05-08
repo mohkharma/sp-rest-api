@@ -1,17 +1,17 @@
 package edu.bzu.app.restapi.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import net.bytebuddy.implementation.bind.annotation.IgnoreForBinding;
+
 /**
  * Author: Mohammed Kharma
  */
-@JsonIgnoreProperties(ignoreUnknown = true, value = {"id"}) //@JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored.
+@JsonIgnoreProperties(ignoreUnknown = true, value = {"id"})
+//@JsonIgnoreProperties is used at class level to mark a property or list of properties to be ignored.
 public class User {
     private int id;
     private String name;
 
-//    @JsonIgnore  //@JsonIgnore is used at field level to mark a property or list of properties to be ignored.
+    //    @JsonIgnore  //@JsonIgnore is used at field level to mark a property or list of properties to be ignored.
     private String email;
 
     public User() {

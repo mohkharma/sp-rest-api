@@ -1,4 +1,5 @@
 package edu.bzu.app.restapi.dto;
+
 /**
  * Author: Mohammed Kharma
  */

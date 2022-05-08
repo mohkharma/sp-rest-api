@@ -4,9 +4,11 @@ package edu.bzu.app.restapi.entity;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import java.io.Serializable;
 
 /***
@@ -16,7 +18,8 @@ import java.io.Serializable;
  */
 
 
-@Data  //Generates getters for all fields, a useful toString method, and hashCode and equals implementations that check all non-transient fields
+@Data
+//Generates getters for all fields, a useful toString method, and hashCode and equals implementations that check all non-transient fields
 
 @AllArgsConstructor   //automatically generates a constructor with a parameter for each field in your class
 @NoArgsConstructor     // generates a constructor with no parameter
